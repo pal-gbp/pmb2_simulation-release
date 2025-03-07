@@ -20,7 +20,7 @@ from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.actions import CheckPublicSim
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
@@ -33,11 +33,13 @@ class LaunchArguments(LaunchArgumentsBase):
     wheel_model: DeclareLaunchArgument = PMB2Args.wheel_model
     laser_model: DeclareLaunchArgument = PMB2Args.laser_model
     add_on_module: DeclareLaunchArgument = PMB2Args.add_on_module
+    camera_model: DeclareLaunchArgument = PMB2Args.camera_model
     is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
     slam: DeclareLaunchArgument = CommonArgs.slam
     advanced_navigation: DeclareLaunchArgument = CommonArgs.advanced_navigation
+    docking: DeclareLaunchArgument = CommonArgs.docking
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
@@ -110,6 +112,24 @@ def declare_actions(
 
     launch_description.add_action(advanced_navigation)
 
+    docking = include_scoped_launch_py_description(
+        pkg_name='pmb2_docking',
+        paths=['launch', 'pmb2_docking_bringup.launch.py'],
+        condition=IfCondition(
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('docking'),
+                    "' == 'True' or '",
+                    LaunchConfiguration('advanced_navigation'),
+                    "' == 'True'"
+                ]
+            )
+        )
+    )
+
+    launch_description.add_action(docking)
+
     robot_spawn = include_scoped_launch_py_description(
         pkg_name='pmb2_gazebo',
         paths=['launch', 'robot_spawn.launch.py'],
@@ -129,6 +149,7 @@ def declare_actions(
             'wheel_model': launch_args.wheel_model,
             'laser_model': launch_args.laser_model,
             'add_on_module': launch_args.add_on_module,
+            'camera_model': launch_args.camera_model,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'is_public_sim': launch_args.is_public_sim,
         }
