@@ -2,6 +2,36 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.7.0 (2025-05-07)
+------------------
+* add use_sim_time to robot_info
+* Contributors: antoniobrandi
+
+4.6.0 (2025-05-06)
+------------------
+* rviz use_sim_time
+* Contributors: antoniobrandi
+
+4.5.2 (2025-05-05)
+------------------
+* fix deps
+* Contributors: andreacapodacqua
+
+4.5.1 (2025-04-09)
+------------------
+* rviz_typo_pluci_nav
+* Contributors: salvatorepiccolo
+
+4.5.0 (2025-04-03)
+------------------
+* store robot_info in tmp
+* Contributors: antoniobrandi
+
+4.4.0 (2025-04-03)
+------------------
+* adopt pal_configuration
+* Contributors: antoniobrandi
+
 4.3.0 (2025-01-22)
 ------------------
 * support camera_model argument
