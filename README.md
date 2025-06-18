@@ -1,3 +1,31 @@
+## pmb2_simulation (humble) - 4.8.0-1
+
+The packages in the `pmb2_simulation` repository were released into the `humble` distro by running `/usr/bin/bloom-release --track humble --rosdistro humble pmb2_simulation -y` on `Wed, 18 Jun 2025 14:12:32 -0000`
+
+These packages were released:
+- `pmb2_gazebo`
+- `pmb2_simulation`
+
+These packages were explicitly ignored:
+- `pmb2_multi`
+
+Version of package(s) in repository `pmb2_simulation`:
+
+- upstream repository: https://github.com/pal-robotics/pmb2_simulation.git
+- release repository: https://github.com/pal-gbp/pmb2_simulation-release.git
+- rosdistro version: `4.7.0-1`
+- old version: `4.7.0-1`
+- new version: `4.8.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## pmb2_simulation (humble) - 4.7.0-1
 
 The packages in the `pmb2_simulation` repository were released into the `humble` distro by running `/usr/bin/bloom-release --track humble --rosdistro humble pmb2_simulation -y` on `Tue, 13 May 2025 11:56:37 -0000`
