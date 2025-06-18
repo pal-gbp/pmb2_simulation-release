@@ -2,6 +2,21 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.8.0 (2025-06-17)
+------------------
+* split gazebo launch file
+* use namespace in robot_info
+* multi robot launch
+* use launch_pal conditions
+* spawn multiple robots
+* support namespaces
+* Contributors: antoniobrandi
+
+4.7.1 (2025-06-05)
+------------------
+* Add pal_urdf_utils as env var path for simulation
+* Contributors: Aina
+
 4.7.0 (2025-05-07)
 ------------------
 * add use_sim_time to robot_info
