@@ -2,6 +2,16 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.9.1 (2025-10-27)
+------------------
+* added missing dep for public sim
+* Contributors: andreacapodacqua
+
+4.9.0 (2025-10-09)
+------------------
+* added gzclient and rviz args
+* Contributors: martinaannicelli
+
 4.8.0 (2025-06-17)
 ------------------
 * split gazebo launch file
