@@ -2,6 +2,23 @@
 Changelog for package pmb2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.11.1 (2025-12-15)
+-------------------
+* missing deps
+* Contributors: antoniobrandi
+
+4.11.0 (2025-12-11)
+-------------------
+* Point Cloud filter pipeline
+* Contributors: antoniobrandi
+
+4.10.0 (2025-12-09)
+-------------------
+* Remove usage of gazebo plugins for JointStatePublisher and DiffDrive
+  Already handled by ros2_control
+* Add support for new gazebo
+* Contributors: Noel Jimenez
+
 4.9.1 (2025-10-27)
 ------------------
 * added missing dep for public sim
